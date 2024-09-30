@@ -5,10 +5,15 @@ const containerSquares = document.querySelector(".container");
 createSquares(8);
 
 const btn_createGrid = document.querySelector("#create-grid");
+const btn_clrearSquares = document.querySelector("#clear-grid");
+
     btn_createGrid.addEventListener("click", ()=>{
        numberSquares =   +prompt("number of squares per side");
       clearSquares();
       createSquares(numberSquares);
+    })
+    btn_clrearSquares.addEventListener('click', ()=> {
+       setDefaultSquaresColor();
     })
 
 function createSquares(numberSquares){
@@ -43,5 +48,10 @@ function randomRGBA() {
     return `rgba(${r}, ${g}, ${b}, ${a})`;
 }
 
-
+function setDefaultSquaresColor() {
+    const squares = containerSquares.children;
+    Array.from(squares).forEach(square => {
+    square.style.backgroundColor="#FFF";
+    });
+}
 
