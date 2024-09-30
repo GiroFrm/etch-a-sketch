@@ -9,6 +9,7 @@ const btn_createGrid = document.querySelector("#create-grid");
     btn_createGrid.addEventListener("click", ()=>{
        numberSquares =   +prompt("number of squares per side");
       console.log(typeof (numberSquares));
+      clearSquares();
       createSquares(numberSquares);
     })
 // create hover effect when the mouse hover on top of each square it will fill with color the square
@@ -22,7 +23,6 @@ function createSquares(numberSquares){
     let sizeSquare = 960 / numberSquares;
     console.log(sizeSquare);
 
-   
     for(let i = 0; i<totalsquares; i++) {
         const newSquare = document.createElement("div");
             newSquare.style.width = sizeSquare+"px";
@@ -31,4 +31,12 @@ function createSquares(numberSquares){
             containerSquares.appendChild(newSquare);
    
     }
+}
+
+
+
+function clearSquares() {
+    while (containerSquares.lastElementChild) {
+        containerSquares.removeChild(containerSquares.lastElementChild);
+      }
 }
