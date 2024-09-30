@@ -8,5 +8,19 @@ body{
 
 .container{
     border: 3px solid green;
-    max-width: 1200px;
+    width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+    
+
+}
+
+.container > div {
+    width: 60px;
+    height: 60px;
+    outline: 1px solid red;
+}
+
+.button-container{
+    margin-bottom: 1rem;
 }
