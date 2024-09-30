@@ -35,10 +35,6 @@ function clearSquares() {
       }
 }
 
-const squares = document.querySelectorAll('.container>div');
-console.log(squares);
-
-
 function randomRGBA() {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
@@ -46,7 +42,6 @@ function randomRGBA() {
     const a = (Math.random()).toFixed(2); // Alpha value between 0 and 1 with 2 decimal places
     return `rgba(${r}, ${g}, ${b}, ${a})`;
 }
-// create hover effect when the mouse hover on top of each square it will fill with color the square
-// randomize the RBGA values with each interactio
-// implement progressive darkening effect by 10% reaching full black.
+
+
 
