@@ -28,7 +28,7 @@ function createSquares(numberSquares){
             containerSquares.appendChild(newSquare);
             let mouseOverFunction = function() {
                this.style.background = randomRGBA();
-               console.log("hover")
+              
             }
             newSquare.onmouseover = mouseOverFunction;
     }
