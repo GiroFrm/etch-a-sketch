@@ -17,6 +17,10 @@ const btn_clrearSquares = document.querySelector("#clear-grid");
     })
 
 function createSquares(numberSquares){
+    if (numberSquares <= 0) {
+        console.error('Number of squares should be greater than zero.');
+        return;
+    }
     let totalsquares = numberSquares * numberSquares;
     // calculate the size of each square as size of width (960px in this case)
     let sizeSquare = 960 / numberSquares;
