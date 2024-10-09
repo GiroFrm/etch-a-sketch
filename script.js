@@ -12,6 +12,7 @@ const btn_clrearSquares = document.querySelector("#clear-grid");
       clearSquares();
       createSquares(numberSquares);
     })
+    
     btn_clrearSquares.addEventListener('click', ()=> {
        setDefaultSquaresColor();
     })
@@ -23,19 +24,28 @@ function createSquares(numberSquares){
     }
     let totalsquares = numberSquares * numberSquares;
     // calculate the size of each square as size of width (960px in this case)
-    let sizeSquare = 960 / numberSquares;
+    let sizeSquare = calculateSquareSize(numberSquares);
   
     for(let i = 0; i<totalsquares; i++) {
-        const newSquare = document.createElement("div");
-            newSquare.style.width = sizeSquare+"px";
-            newSquare.style.height = sizeSquare+"px";
-            containerSquares.appendChild(newSquare);
-            let mouseOverFunction = function() {
-               this.style.background = randomRGBA();
-              
-            }
-            newSquare.onmouseover = mouseOverFunction;
+        const newSquare = createSquare(sizeSquare);
+        containerSquares.appendChild(newSquare);
     }
+}
+
+function createSquare(size) {
+    const square = document.createElement("div");
+    square.style.width = size + "px";
+    square.style.height = size + "px";
+    square.onmouseover = changeColorOnHover;
+    return square;
+}
+
+function changeColorOnHover() {
+    this.style.background = randomRGBA();
+}
+
+function calculateSquareSize(numberSquares) {
+    return 960 / numberSquares;
 }
 
 function clearSquares() {
