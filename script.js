@@ -2,7 +2,7 @@
 let numberSquares = 8;
 const containerSquares = document.querySelector(".container");
 
-createSquares(8);
+createSquares(numberSquares);
 
 const btn_createGrid = document.querySelector("#create-grid");
 const btn_clrearSquares = document.querySelector("#clear-grid");
@@ -12,7 +12,7 @@ const btn_clrearSquares = document.querySelector("#clear-grid");
       clearSquares();
       createSquares(numberSquares);
     })
-    
+
     btn_clrearSquares.addEventListener('click', ()=> {
        setDefaultSquaresColor();
     })
